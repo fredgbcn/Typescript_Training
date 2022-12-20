@@ -19,7 +19,7 @@ let afficherPersonne = (
         ville : string;
         cp : number;
     }
-    ) => {
+    ) : void => {
     console.log(`Prenom : ${in_prenom}`);
     console.log("Age : " + in_age);
     console.log("Sexe : " + (in_sexe ? "Homme" : "Femme"));
@@ -30,4 +30,11 @@ let afficherPersonne = (
     console.log( in_adresse.ligne);
     console.log( in_adresse.cp + "" + in_adresse.ville);
 }
-afficherPersonne(prenom, age, sexe, sports, adresse)
+afficherPersonne(prenom, age, sexe, sports, adresse);
+
+function anniversaire(in_age:number) : number {
+    return in_age + 1;
+}
+let newAge:number;
+newAge = anniversaire(age);
+console.log("Age : " + newAge);
