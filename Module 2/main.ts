@@ -9,7 +9,17 @@ const adresse = {
 }
 
 
-let afficherPersonne = (in_prenom, in_sexe, in_age, in_sports, in_adresse) => {
+let afficherPersonne = (
+    in_prenom:string, 
+    in_age:number,
+    in_sexe:boolean,  
+    in_sports:string[], 
+    in_adresse:{
+        ligne : string;
+        ville : string;
+        cp : number;
+    }
+    ) => {
     console.log(`Prenom : ${in_prenom}`);
     console.log("Age : " + in_age);
     console.log("Sexe : " + (in_sexe ? "Homme" : "Femme"));

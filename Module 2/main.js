@@ -7,7 +7,7 @@ var adresse = {
     ville: "Strasbourg",
     cp: 67000
 };
-var afficherPersonne = function (in_prenom, in_sexe, in_age, in_sports, in_adresse) {
+var afficherPersonne = function (in_prenom, in_age, in_sexe, in_sports, in_adresse) {
     console.log("Prenom : ".concat(in_prenom));
     console.log("Age : " + in_age);
     console.log("Sexe : " + (in_sexe ? "Homme" : "Femme"));
