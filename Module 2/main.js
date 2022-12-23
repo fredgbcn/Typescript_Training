@@ -20,9 +20,20 @@ var afficherPersonne = function (in_prenom, in_age, in_sexe, in_sports, in_adres
     console.log(in_adresse.cp + "" + in_adresse.ville);
 };
 afficherPersonne(prenom, age, sexe, sports, adresse);
-function anniversaire(in_age) {
+var anniversaire = function (in_age) {
     return in_age + 1;
-}
+};
 var newAge;
 newAge = anniversaire(age);
 console.log("Age : " + newAge);
+function displayResult(resultat) {
+    console.log("Le résultat " + resultat);
+}
+function displayAge(age) {
+    console.log("The age is : " + age);
+}
+function ajout(nb1, nb2, callback) {
+    var res = nb1 + nb2;
+    callback(res);
+}
+ajout(10, 15, displayAge);

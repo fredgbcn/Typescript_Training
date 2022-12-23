@@ -1,4 +1,4 @@
-let prenom = "Fred";
+let   prenom = "Fred";
 let age = 38;
 let sexe = true;
 const sports = ["roller", "yoga"];
@@ -32,9 +32,23 @@ let afficherPersonne = (
 }
 afficherPersonne(prenom, age, sexe, sports, adresse);
 
-function anniversaire(in_age:number) : number {
+let anniversaire = (in_age:number) : number => {
     return in_age + 1;
 }
 let newAge:number;
 newAge = anniversaire(age);
 console.log("Age : " + newAge);
+
+function displayResult(resultat:number) : void{
+    console.log("Le résultat " + resultat)
+}
+function displayAge(age:number) : void{
+    console.log("The age is : " + age)
+}
+
+function ajout(nb1:number, nb2:number, callback : (n: number) => void){
+    let res = nb1 + nb2;
+    callback(res)
+}
+
+ajout(10, 15, displayAge)
