@@ -76,3 +76,19 @@ var concat = ajouter("Fred", " G.");
 console.log(concat.toUpperCase());
 var concat2 = ajouter("32", " G.");
 console.log(concat2.toUpperCase());
+//Arrays
+var notes = [10, 15, 20];
+var prenoms = ["Mathieu", "Fred", "Tya"];
+var personnage = ["Mathieu", 31];
+personnage[2] = "prof";
+var perso = ["Mathieu", 31]; //TUPLE, entre crochets la forme est fixe
+//perso[2] ne fonctionne pas car tableau strict.
+var tab = [
+    [10, 12],
+    [14, 16],
+    [18, 20]
+];
+var tab2 = [
+    { x: 1, y: 2 },
+    { x: 2, y: 3 }
+];

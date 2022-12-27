@@ -98,3 +98,21 @@ console.log(concat.toUpperCase())
 
 let concat2 = ajouter("32", " G.")
 console.log(concat2.toUpperCase())
+
+//Arrays
+
+const notes =[10, 15, 20]
+const prenoms=["Mathieu", "Fred", "Tya"]
+const personnage:(string|number)[]=["Mathieu",31]
+personnage[2]="prof"
+const perso:[string,number]=["Mathieu", 31]; //TUPLE, entre crochets la forme est fixe
+//perso[2] ne fonctionne pas car tableau strict.
+const tab = [
+    [10,12],
+    [14,16],
+    [18,20]
+]
+const tab2 = [  //const tab2: {}[] = [... pour spécifier que lee objets auront n'importe quelle forme. tab2: {x:number, y:number}[] = [... pour fixer
+    {x:1, y:2},
+    {x:2, y:3}
+]
