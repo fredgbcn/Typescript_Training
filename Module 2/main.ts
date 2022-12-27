@@ -4,7 +4,7 @@ let sexe = true;
 const sports = ["roller", "yoga"];
 const adresse = {
     ligne : "rue Eiffel",
-    ville : "Strasbourg",
+    ville : " Strasbourg ",
     cp:67000
 }
 
@@ -93,8 +93,8 @@ function ajouter(e1: number | string, e2: number | string) : number | string{
 let calcul = ajouter(5, 15);
 Math.floor(calcul)
 
-let concat = ajouter("Fred", " G.")
-console.log(concat.toUpperCase())
+let concatenation = ajouter("Fred", " G.")
+console.log(concatenation.toUpperCase())
 
 let concat2 = ajouter("32", " G.")
 console.log(concat2.toUpperCase())
@@ -116,3 +116,25 @@ const tab2 = [  //const tab2: {}[] = [... pour spécifier que lee objets auront 
     {x:1, y:2},
     {x:2, y:3}
 ]
+//Création de type
+type Adress = {
+    ligne: string;
+    ville: string;
+    cp: number;
+}
+type Point = {
+    x:number;
+    y:number;
+}
+function displayAdress (in_adr:Adress){
+    console.log("Création de type :")
+    console.log(in_adr.ligne);
+    console.log(in_adr.cp + "" + in_adr.ville)
+}
+displayAdress(adresse);
+displayAdress({ligne: "rue des truites", ville:" Paris ", cp: 75000})
+const adress:Adress={
+    ligne: "rue des roses",
+    ville:"Lyon",
+    cp: 69000
+}

@@ -4,7 +4,7 @@ var sexe = true;
 var sports = ["roller", "yoga"];
 var adresse = {
     ligne: "rue Eiffel",
-    ville: "Strasbourg",
+    ville: " Strasbourg ",
     cp: 67000
 };
 var afficherPersonne = function (in_prenom, in_age, in_sexe, in_sports, in_adresse) {
@@ -72,8 +72,8 @@ function ajouter(e1, e2) {
 }
 var calcul = ajouter(5, 15);
 Math.floor(calcul);
-var concat = ajouter("Fred", " G.");
-console.log(concat.toUpperCase());
+var concatenation = ajouter("Fred", " G.");
+console.log(concatenation.toUpperCase());
 var concat2 = ajouter("32", " G.");
 console.log(concat2.toUpperCase());
 //Arrays
@@ -92,3 +92,15 @@ var tab2 = [
     { x: 1, y: 2 },
     { x: 2, y: 3 }
 ];
+function displayAdress(in_adr) {
+    console.log("Création de type :");
+    console.log(in_adr.ligne);
+    console.log(in_adr.cp + "" + in_adr.ville);
+}
+displayAdress(adresse);
+displayAdress({ ligne: "rue des truites", ville: " Paris ", cp: 75000 });
+var adress = {
+    ligne: "rue des roses",
+    ville: "Lyon",
+    cp: 69000
+};
