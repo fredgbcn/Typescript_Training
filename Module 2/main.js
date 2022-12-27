@@ -26,6 +26,7 @@ var anniversaire = function (in_age) {
 var newAge;
 newAge = anniversaire(age);
 console.log("Age : " + newAge);
+//Fonction callback
 function displayResult(resultat) {
     console.log("Le résultat " + resultat);
 }
@@ -37,3 +38,41 @@ function ajout(nb1, nb2, callback) {
     callback(res);
 }
 ajout(10, 15, displayAge);
+//Type Any
+var personne = ["Ave", 34, true];
+function displayPersonne(perso) {
+    for (var _i = 0, perso_1 = perso; _i < perso_1.length; _i++) {
+        var value = perso_1[_i];
+        console.log(value);
+    }
+}
+displayPersonne(personne);
+//Union de types
+var information;
+information = "Mathieu";
+test(information);
+information = 2;
+test(information);
+function test(in_input) {
+    if (typeof (in_input) === "string") {
+        console.log("chaine de caractères");
+    }
+    else if (typeof (in_input) === "number") {
+        console.log("Nombre");
+    }
+    else if (typeof (in_input) === "boolean") {
+        console.log("Booléan");
+    }
+}
+function ajouter(e1, e2) {
+    if (typeof e1 === "number" && typeof e2 === "number") {
+        return e1 + e2;
+    }
+    return e1.toString() + "" + e2.toString();
+}
+var calcul = ajouter(5, 15);
+Math.floor(calcul);
+var concat = ajouter("Fred", " G.");
+console.log(concat.toUpperCase());
+var concat2 = ajouter("32", " G.");
+console.log(concat2.toUpperCase());

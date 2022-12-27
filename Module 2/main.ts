@@ -39,6 +39,7 @@ let newAge:number;
 newAge = anniversaire(age);
 console.log("Age : " + newAge);
 
+//Fonction callback
 function displayResult(resultat:number) : void{
     console.log("Le résultat " + resultat)
 }
@@ -52,3 +53,48 @@ function ajout(nb1:number, nb2:number, callback : (n: number) => void){
 }
 
 ajout(10, 15, displayAge)
+
+//Type Any
+const personne:any[] = ["Ave", 34, true];
+function displayPersonne(perso:any[]){
+    for(let value of perso){
+        console.log(value)
+    }
+}
+displayPersonne(personne)
+
+//Union de types
+
+var information : string | number | boolean;
+information = "Mathieu";
+test(information)
+information = 2;
+test(information)
+
+function test (in_input : string | number | boolean){
+    if(typeof(in_input)=== "string"){
+        console.log("chaine de caractères")
+    }else if (typeof(in_input) === "number"){
+        console.log("Nombre")
+    }else if (typeof(in_input)==="boolean"){
+        console.log("Booléan")
+    }
+}
+//Surcharge de fonction
+function ajouter(e1:number, e2: string): string;
+function ajouter(e1:string, e2:string) : string;
+function ajouter(e1:number, e2:number): number;
+function ajouter(e1: number | string, e2: number | string) : number | string{
+    if(typeof e1 ==="number" && typeof e2 === "number"){
+        return e1 + e2
+    }
+    return e1.toString() + "" + e2.toString();
+}
+let calcul = ajouter(5, 15);
+Math.floor(calcul)
+
+let concat = ajouter("Fred", " G.")
+console.log(concat.toUpperCase())
+
+let concat2 = ajouter("32", " G.")
+console.log(concat2.toUpperCase())
