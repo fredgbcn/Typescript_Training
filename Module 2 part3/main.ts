@@ -31,3 +31,23 @@ const p2:Perso & Guerrier = {
 }
 console.log(CLASSE.GUERRIER)
 console.log(p2)
+//unknown never
+let test : unknown; //au lieu de any pour éviter les incohérences
+test = 31;
+test = "Matthieu"; //...
+
+var sexe : boolean; 
+if(typeof test ==="boolean"){
+sexe = test;
+}
+console.log(typeof sexe)//Incohérence
+
+function genererException(msg:string): never {
+   throw {message: msg}
+}
+
+
+//Récupérer Eléments du DOM
+const inputNom = document.querySelector("#nom")! as HTMLInputElement; //Necessaire sinon erreur
+inputNom.value ="test";
+// le ?? permet de tester si une valeur n'est ni undefined ni null
