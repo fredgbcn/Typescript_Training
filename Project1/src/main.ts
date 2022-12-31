@@ -12,8 +12,8 @@ const dollar:DeviseType = {
     rate: 1
 }
 const euro:DeviseType = {
-    nom : "euro",
-    code: "eur",
+    nom : "Euro",
+    code: "Eur",
     symbole:"€",
     rate: 1.2
 }
@@ -31,5 +31,23 @@ const yuan:DeviseType = {
     rate: 0.15
 }
 const devises:DeviseType[] = [dollar, euro, livre, yuan]
-const inputMontant = document.getElementById("montant")! as HTMLInputElement;
-console.log(devises)
+const deviseInitiale = document.getElementById("devise-initiale")! as HTMLSelectElement;
+deviseInitiale.innerHTML = generateOption(devises)
+
+const deviseFinale = document.getElementById("devise-finale")! as HTMLSelectElement;
+deviseFinale.innerHTML = generateOption(devises)
+
+function generateOption(in_devises:DeviseType[]) : string{
+    let listeDeviseTxt = ""
+    for(let d of in_devises){
+        listeDeviseTxt += `<option value=\"${d.code}\">${d.nom} - ${d.symbole}</option>`
+    }
+    return listeDeviseTxt;
+}
+const montant = document.getElementById("montant")! as HTMLInputElement;
+
+function afficherMontant(){
+ let value = montant.value
+    console.log(value)
+}
+montant.addEventListener("input", afficherMontant)

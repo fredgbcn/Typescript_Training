@@ -6,8 +6,8 @@ const dollar = {
     rate: 1
 };
 const euro = {
-    nom: "euro",
-    code: "eur",
+    nom: "Euro",
+    code: "Eur",
     symbole: "€",
     rate: 1.2
 };
@@ -24,6 +24,21 @@ const yuan = {
     rate: 0.15
 };
 const devises = [dollar, euro, livre, yuan];
-const inputMontant = document.getElementById("montant");
-console.log(devises);
+const deviseInitiale = document.getElementById("devise-initiale");
+deviseInitiale.innerHTML = generateOption(devises);
+const deviseFinale = document.getElementById("devise-finale");
+deviseFinale.innerHTML = generateOption(devises);
+function generateOption(in_devises) {
+    let listeDeviseTxt = "";
+    for (let d of in_devises) {
+        listeDeviseTxt += `<option value=\"${d.code}\">${d.nom} - ${d.symbole}</option>`;
+    }
+    return listeDeviseTxt;
+}
+const montant = document.getElementById("montant");
+function afficherMontant() {
+    let value = montant.value;
+    console.log(value);
+}
+montant.addEventListener("input", afficherMontant);
 //# sourceMappingURL=main.js.map
