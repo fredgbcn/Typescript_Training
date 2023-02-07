@@ -1,16 +1,10 @@
 class Voiture {
-    private marque;
-    private modele;
-    private couleur;
-    private nbPortes;
+    
 
-    constructor(marque, modele, couleur,nbPortes){
-        this.marque = marque;
-        this.modele = modele;
-        this.couleur = couleur;
-        this.nbPortes = nbPortes
-        
-    }
+    constructor(private marque : string,
+        private modele : string,
+        private couleur : string,
+        private nbPortes : number){}
     public afficherVoitue() {
         console.log('marque : ' + v1.marque);
         console.log('modele : ' + v1.modele);
@@ -20,9 +14,9 @@ class Voiture {
     private afficherCouleur(){ //ne peut plus s'utiliser en dehors de la class
         console.log('couleur' + this.couleur)
     }
-   modifierNbPortes(nbPortes : number){
+   public modifierNbPortes(nbPortes : number){
         if(nbPortes === 5 || nbPortes === 3)
-        this.nbPortes.Portes = nbPortes;
+        this.nbPortes = nbPortes;
     }
 }
 

@@ -16,7 +16,7 @@ var Voiture = /** @class */ (function () {
     };
     Voiture.prototype.modifierNbPortes = function (nbPortes) {
         if (nbPortes === 5 || nbPortes === 3)
-            this.nbPortes.Portes = nbPortes;
+            this.nbPortes = nbPortes;
     };
     return Voiture;
 }());
